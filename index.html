@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>An N-sided Dice</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    
+	<link rel="shortcut icon" type="image/x-icon" href="d20.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <link rel="apple-touch-icon" href="d20.png"/>
+
+    <style>
+        #range {
+            text-align: center;
+        }
+        input {
+            text-align: center;
+            font-size: 25px;
+            width: 75px;
+            height: 50px;
+        }
+        #answer{
+            text-align:center;
+            font-size: 75px;
+            line-height: 75px;
+            margin: calc(50vh - 75px - 80px) 0;
+        }
+        #go_box {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="range">
+        <p>
+            Generate a number between:
+        </p>
+        <input id="min" type="number" value=0 /> 
+        &amp; 
+        <input id="max" type="number" value=10 />
+    </div>
+
+    <div id="answer">
+        🎲
+    </div>
+
+    <div id="go_box">
+        <input id="go" type="button" value="Roll" onClick="get_random()"> 
+    </div>
+</body>
+<script>
+    function get_random(){
+        document.getElementById("answer").innerHTML = "🎲"
+        setTimeout(function(){  
+            var min = Math.ceil(document.getElementById("min").value);
+            var max = Math.floor(document.getElementById("max").value);
+            var output = Math.floor(Math.random() * (max - min + 1)) + min;
+            document.getElementById("answer").innerHTML = output;
+        }, 750);
+    }
+</script>
+</html>
