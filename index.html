@@ -6,7 +6,7 @@
     
 	<link rel="shortcut icon" type="image/x-icon" href="d20.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
-    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="apple-touch-icon" href="d20.png"/>
 
     <style>
@@ -23,9 +23,13 @@
             text-align:center;
             font-size: 75px;
             line-height: 75px;
-            margin: calc(50vh - 75px - 80px) 0;
+            margin: calc(50dvh - 75px - 80px) 0;
         }
         #go_box {
+            text-align: center;
+        }
+        #go {
+            width: 80%;
             text-align: center;
         }
 
@@ -36,9 +40,9 @@
         <p>
             Generate a number between:
         </p>
-        <input id="min" type="number" value=0 /> 
+        <input id="min" type=number value=1 onfocus="this.select();"/> 
         &amp; 
-        <input id="max" type="number" value=10 />
+        <input id="max" type=number value=20 onfocus="this.select();"/>
     </div>
 
     <div id="answer">
