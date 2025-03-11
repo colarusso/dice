@@ -122,6 +122,13 @@
         localStorage.setItem('max', document.getElementById("max").value);        
     }
 
+    function handleBlur() {
+        document.getElementById("answer").innerHTML = `<a href="javascript:get_random();" style="text-decoration: none;">🎲</a>`; // Change to dice emoji when page loses focus
+    }
+
+    // Event listeners for window focus and blur
+    window.onblur = handleBlur;
+
     function get_random(){
 
         document.getElementById("go").disabled = true;
