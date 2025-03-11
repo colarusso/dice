@@ -91,9 +91,9 @@
         <p>
             Pick a number between
         </p>
-        <input id="min" type=tel value=1 onfocus="this.select();"/> 
+        <input id="min" type=tel value=1 onfocus="this.select();" onchange="saveValues()"/> 
         &nbsp;&amp;&nbsp; 
-        <input id="max" type=tel value=6 onfocus="this.select();"/>
+        <input id="max" type=tel value=6 onfocus="this.select();" onchange="saveValues()"/>
     </div>
 
     <div id="answer">
@@ -105,6 +105,23 @@
     </div>
 </body>
 <script>
+
+    function loadValues() {
+        if (localStorage.getItem('min')) {
+            document.getElementById("min").value = localStorage.getItem('min');
+        }
+        if (localStorage.getItem('max')) {
+            document.getElementById("max").value = localStorage.getItem('max');
+        }
+    }
+    loadValues();
+
+    function saveValues() {
+        // Save the min and max values to local storage
+        localStorage.setItem('min', document.getElementById("min").value);
+        localStorage.setItem('max', document.getElementById("max").value);        
+    }
+
     function get_random(){
 
         document.getElementById("go").disabled = true;
