@@ -36,7 +36,7 @@
             text-align:center;
             font-size: calc(100dvh/5);
             line-height: calc((100dvh - 200px)/3);
-            margin-top:  calc(((100dvh - 200px)/3) - 35px);
+            margin-top:  calc(((100dvh - 200px)/3) - 40px);
         }
         img {
             height: calc(100dvh/5);
@@ -76,12 +76,12 @@
             80% { transform: translate(-1px, -1px) rotate(1deg); }
             90% { transform: translate(1px, 2px) rotate(0deg); }
             100% { transform: translate(1px, -2px) rotate(-1deg); }
-            }
+        }
 
-            .shaking {
-            animation: shake 0.5s; /* Adjust timing to control shake speed */
-            animation-iteration-count: infinite;
-            }
+        .shaking {
+        animation: shake 0.5s; /* Adjust timing to control shake speed */
+        animation-iteration-count: infinite;
+        }
 
 
     </style>
@@ -143,7 +143,7 @@
 
         setTimeout(function(){  
             var output = Math.floor(Math.random() * (max - min + 1)) + min;
-            answer.innerHTML = output;
+            answer.innerHTML = `<a href="javascript:get_random();" style="text-decoration: none;color:white;">`+output+`</a>`;
             answer.classList.remove("shaking"); // Stop shaking when the number is displayed
             document.getElementById("go").disabled = false;
         }, 750); // Adjust delay to match shake duration
